@@ -18,6 +18,7 @@
 
 function esPrecioValido(valor) {
   // Tu código aquí
+  return
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
