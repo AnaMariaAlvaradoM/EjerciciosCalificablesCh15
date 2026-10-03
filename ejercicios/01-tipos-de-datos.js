@@ -17,7 +17,11 @@
 // ============================================================
 
 function esPrecioValido(valor) {
-  // Tu código aquí
+  if (typeof(valor) == "number" && typeof(valor) !="NaN" && valor > 0) {
+    return true
+  } else {
+    return false
+  }
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
