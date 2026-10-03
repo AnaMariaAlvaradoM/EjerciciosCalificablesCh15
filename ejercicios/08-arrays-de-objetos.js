@@ -19,8 +19,30 @@
 //       valorInventario: 135000, agotados: ["Capuchino"] }
 // ============================================================
 
-function resumenInventario(productos) {
-  // Tu código aquí
+function resumenInventario(productos){
+  
+  let totalProductos = productos.length;
+  let unidadesTotales = 0;
+  let valorInventario = 0;
+  let agotados = [];
+
+  for (let i = 0; i < productos.length; i++) {
+    let producto = productos[i];
+
+    unidadesTotales = unidadesTotales + producto.stock;
+    valorInventario = valorInventario + producto.precio * producto.stock;
+
+    if (producto.stock === 0) {
+      agotados.push(producto.nombre);
+    }
+  }
+
+  return {
+    totalProductos: totalProductos,
+    unidadesTotales: unidadesTotales,
+    valorInventario: valorInventario,
+    agotados: agotados,
+  };
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
