@@ -17,6 +17,12 @@
 
 function crearProducto(nombre, precio, stock) {
   // Tu código aquí
+  return {
+    nombre: nombre,
+    precio: precio,
+    stock: stock,
+    disponible: (stock>0)
+  }
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
