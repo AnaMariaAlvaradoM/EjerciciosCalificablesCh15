@@ -19,9 +19,39 @@
 //       valorInventario: 135000, agotados: ["Capuchino"] }
 // ============================================================
 
+const { calcularPrecioConIva } = require("./02-variables-y-operadores");
+
 function resumenInventario(productos) {
-  // Tu código aquí
+  let totalProductos = 0;
+  let unidadesTotales = 0;
+  let valorInventario = 0;
+  const agotados = []
+
+  for(const producto of productos){
+    totalProductos++;
+
+    unidadesTotales = unidadesTotales + producto.stock;
+    valorInventario = valorInventario + (producto.precio * producto.stock);
+
+    if (producto.stock === 0){
+      agotados.push(producto.nombre);
+    }
+    }
+
+    return{
+      totalProductos: totalProductos,
+      unidadesTotales: unidadesTotales,
+      valorInventario: valorInventario,
+      agotados: agotados
+    }
+   
 }
+
+resumenInventario([
+    { nombre: "Café americano", precio: 4500, stock: 30 },
+    { nombre: "Capuchino", precio: 7000, stock: 0 },
+  ])
+
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { resumenInventario };
