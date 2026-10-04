@@ -20,8 +20,32 @@
 // ============================================================
 
 function resumenInventario(productos) {
-  // Tu código aquí
+  let totalProductos = productos.length;
+  let unidadesTotales = 0;
+  let valorInventario = 0;
+  let agotados = [];
+  
+  for (let p of productos) {
+    unidadesTotales = unidadesTotales + p.stock;
+    valorInventario = valorInventario + (p.precio * p.stock);
+    if (p.stock === 0) {
+      agotados.push(p.nombre);
+    }
+  } 
+  return {
+    totalProductos: totalProductos,
+    unidadesTotales: unidadesTotales,
+    valorInventario: valorInventario,
+    agotados: agotados
+  };
 }
+//prueba de ejemplo
+console.log(resumenInventario([
+{ nombre: "Café americano", precio: 4500, stock: 30 },
+{ nombre: "Capuchino", precio: 7000, stock: 0 },
+]));
+// → { totalProductos: 2, unidadesTotales: 30,
+// valorInventario: 135000, agotados: ["Capuchino"] }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { resumenInventario };
