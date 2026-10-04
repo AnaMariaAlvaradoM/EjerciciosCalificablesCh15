@@ -19,8 +19,25 @@
 //       valorInventario: 135000, agotados: ["Capuchino"] }
 // ============================================================
 
+//const {crearProducto} = require("./07-objetos.js");
 function resumenInventario(productos) {
-  // Tu código aquí
+  let resumen={};
+  let totalProductos=productos.length;
+  let unidadesTotales=0;
+  let valorInventario=0;
+  let agotados=[];
+  for(let i=0; i<=productos.length-1;i++){
+    unidadesTotales=unidadesTotales+productos[i].stock;
+    valorInventario=valorInventario+(productos[i].precio*productos[i].stock);
+    if(productos[i].stock==0){
+      agotados.push(productos[i].nombre);
+    }
+  }
+  resumen.totalProductos=totalProductos;
+  resumen.unidadesTotales=unidadesTotales;
+  resumen.valorInventario=valorInventario;
+  resumen.agotados=agotados;
+  return(resumen);  
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
