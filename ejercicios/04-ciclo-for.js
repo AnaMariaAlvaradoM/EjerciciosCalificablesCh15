@@ -13,8 +13,14 @@
 // ============================================================
 
 function sumarVentas(ventas) {
-  // Tu código aquí
+let ventaDia=0
+  for (const venta of ventas){
+    ventaDia += venta
+    console.log(ventaDia)
+  }
+  return ventaDia
 }
+
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { sumarVentas };
