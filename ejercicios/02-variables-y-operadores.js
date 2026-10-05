@@ -15,8 +15,13 @@
 // ============================================================
 
 function calcularPrecioConIva(precio) {
-  // Tu código aquí
+  const IVA = (0.19);
+  const resultado = Math.round (precio * IVA) + precio;
+  return resultado;
 }
+
+console.log(calcularPrecioConIva(10000));
+console.log(calcularPrecioConIva(4500))
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { calcularPrecioConIva };
