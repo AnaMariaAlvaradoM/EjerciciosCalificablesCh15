@@ -16,7 +16,22 @@
 // ============================================================
 
 function crearProducto(nombre, precio, stock) {
-  // Tu código aquí
+
+  let disponible; 
+
+   if(stock > 0){
+     disponible = true
+    } else {
+      disponible = false
+    }
+  return {
+
+    nombre: nombre,
+    precio: precio,
+    stock: stock,
+    disponible: disponible
+   
+  }
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
