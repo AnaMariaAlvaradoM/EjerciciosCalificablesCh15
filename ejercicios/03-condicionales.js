@@ -17,8 +17,15 @@
 // ============================================================
 
 function calcularDescuento(subtotal) {
-  // Tu código aquí
+  let descuento;
+  if(subtotal >= 100000){
+    descuento = subtotal * 0.10; 
+  }else if(subtotal >= 50000){
+    descuento = subtotal * 0.05;
+  }else{
+    descuento = 0;
+  }
+  return Math.round(descuento);
 }
-
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { calcularDescuento };

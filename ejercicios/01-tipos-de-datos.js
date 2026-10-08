@@ -17,7 +17,17 @@
 // ============================================================
 
 function esPrecioValido(valor) {
-  // Tu código aquí
+  if(typeof(valor) === 'number'){
+    if(valor > 0){
+      return true;
+    }else{
+      console.log("Ingrese un numero entero positivo mayor que 0");
+      return false;
+    }
+  }else {
+    console.log("valor inválido");
+    return false;
+  }
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
