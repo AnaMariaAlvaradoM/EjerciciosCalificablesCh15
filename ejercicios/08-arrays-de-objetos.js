@@ -20,7 +20,32 @@
 // ============================================================
 
 function resumenInventario(productos) {
-  // Tu código aquí
+  let totalProductos = productos.length;
+  let unidadesTotales = 0;
+  let valorInventario = 0;
+  let agotados = []; 
+
+  for(let i = 0; i < productos.length; i++) {
+    let producto = productos[i];
+
+    // 1. Sumar unidades
+    unidadesTotales = unidadesTotales + producto.stock;
+
+    // 2. Sumar valor del inventario
+    valorInventario = valorInventario + (producto.precio * producto.stock);
+
+    // 3. Revisar si está agotado
+    if (producto.stock === 0) {
+      agotados.push(producto.nombre);
+    }
+  }
+
+  return {
+    totalProductos: totalProductos,
+    unidadesTotales: unidadesTotales,
+    valorInventario: valorInventario,
+    agotados: agotados
+  };
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
