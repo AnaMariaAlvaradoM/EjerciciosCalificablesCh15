@@ -22,8 +22,15 @@ const { calcularPrecioConIva } = require("./02-variables-y-operadores");
 const { calcularDescuento } = require("./03-condicionales");
 
 function calcularTotalFactura(subtotal) {
-  // Tu código aquí
+   const descuento = calcularDescuento(subtotal);
+   const subtotalDescuento = subtotal - descuento;
+   const totalFactura = calcularPrecioConIva(subtotalDescuento);
+   return totalFactura;
 }
+console.log(calcularTotalFactura(120000));
+console.log(calcularTotalFactura(30000));
+console.log(calcularTotalFactura(50000));
+console.log(calcularTotalFactura(100000));
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { calcularTotalFactura };
