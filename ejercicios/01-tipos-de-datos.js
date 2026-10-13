@@ -17,8 +17,20 @@
 // ============================================================
 
 function esPrecioValido(valor) {
+  const precio = Number(valor);
+  if (typeof precio === Number && !Number.isNaN(precio) && precio > 0) 
+    return true;
+  else (
+    typeof precio === "number"
+  )
+  return false;
+
   // Tu código aquí
 }
+
+console.log(esPrecioValido("4500"));  
+console.log(esPrecioValido(4500));
+console.log(esPrecioValido(0));  
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { esPrecioValido };
