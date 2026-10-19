@@ -22,7 +22,9 @@ const { calcularPrecioConIva } = require("./02-variables-y-operadores");
 const { calcularDescuento } = require("./03-condicionales");
 
 function calcularTotalFactura(subtotal) {
-  // Tu código aquí
+  subtotal = subtotal - calcularDescuento(subtotal)
+  subtotal = calcularPrecioConIva(subtotal)
+  return subtotal
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
