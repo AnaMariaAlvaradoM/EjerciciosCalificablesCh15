@@ -17,8 +17,18 @@
 // ============================================================
 
 function esPrecioValido(valor) {
-  // Tu código aquí
+  if(typeof valor === 'number' && valor > 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
+// --- LÍNEAS DE PRUEBA ---
+console.log("¿4500 es válido?:", esPrecioValido(4500));   // Debería salir: true
+console.log("¿'4500' es válido?:", esPrecioValido("4500")); // Debería salir: false
+console.log("¿0 es válido?:", esPrecioValido(0));         // Debería salir: false
+console.log("¿NaN es válido?:", esPrecioValido(NaN));     // Debería salir: false
+
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { esPrecioValido };

@@ -20,8 +20,48 @@
 // ============================================================
 
 function resumenInventario(productos) {
-  // Tu código aquí
+  // 1. Inicializar las variables que acumularán los datos
+  let unidadesTotales = 0;
+  let valorInventario = 0;
+  const agotados = [];
+
+  // 2. Recorrer el array de productos
+  for (let i = 0; i < productos.length; i++) {
+    const prod = productos[i];
+
+    // Sumar el stock al total de unidades
+    unidadesTotales += prod.stock;
+
+    // Calcular el valor de este producto (precio * stock) y sumarlo al total
+    valorInventario += prod.precio * prod.stock;
+
+    // Si el stock es 0, guardar solo el NOMBRE en el array de agotados
+    if (prod.stock === 0) {
+      agotados.push(prod.nombre);
+    }
+  }
+
+  // 3. Retornar el objeto final con las 4 propiedades requeridas
+  return {
+    totalProductos: productos.length,
+    unidadesTotales: unidadesTotales,
+    valorInventario: valorInventario,
+    agotados: agotados
+  };
 }
+
+// === PRUEBA EN LA CONSOLA ===
+const miInventarioDePrueba = [
+  { nombre: "Café americano", precio: 4500, stock: 30 }, 
+  { nombre: "Capuchino", precio: 7000, stock: 0 },       
+  { nombre: "Pandebono", precio: 2500, stock: 10 },       
+  { nombre: "Buñuelo", precio: 2000, stock: 0 }          
+];
+
+const resultado = resumenInventario(miInventarioDePrueba);
+
+console.log("=== RESULTADO DEL INVENTARIO ===");
+console.log(resultado);
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { resumenInventario };

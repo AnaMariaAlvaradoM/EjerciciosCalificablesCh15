@@ -13,8 +13,18 @@
 // ============================================================
 
 function sumarVentas(ventas) {
-  // Tu código aquí
+  let total = 0;
+  for (let i = 0; i < ventas.length; i++) {
+    total = total + ventas[i];
+  }
+
+  return total;
 }
+
+// --- LÍNEAS PARA PROBAR EN TU TERMINAL ---
+console.log("Prueba 1 (Ventas):", sumarVentas([4500, 7000, 2500])); // Debe dar: 14000
+console.log("Prueba 2 (Vacío):",  sumarVentas([]));                 // Debe dar: 0
+
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { sumarVentas };
