@@ -23,6 +23,10 @@ const { calcularDescuento } = require("./03-condicionales");
 
 function calcularTotalFactura(subtotal) {
   // Tu código aquí
+  let descuento = calcularDescuento (subtotal);
+  let subConDesc = subtotal - descuento;
+  let descuentoIva = calcularPrecioConIva(subConDesc);
+  return(descuentoIva);
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
