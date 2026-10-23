@@ -16,7 +16,14 @@
 // ============================================================
 
 function crearProducto(nombre, precio, stock) {
-  // Tu código aquí
+  const disponible = stock > 0
+  const producto = {
+    nombre: nombre,
+    precio: precio,
+    stock: stock,
+    disponible: disponible 
+  }
+  return producto;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función

@@ -17,7 +17,18 @@
 // ============================================================
 
 function calcularDescuento(subtotal) {
-  // Tu código aquí
+  if (subtotal >= 100000) {
+    const descuento = subtotal * 0.10;
+    return Math.round(descuento);    
+  }
+  else if (subtotal >= 50000) {
+    const descuento2 = subtotal * 0.05
+    return Math.round(descuento2);
+  }
+  else if (subtotal < 50000) {
+    const descuento3 = 0
+    return Math.round(descuento3); 
+  }
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
