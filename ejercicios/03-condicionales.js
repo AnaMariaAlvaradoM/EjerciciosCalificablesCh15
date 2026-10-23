@@ -17,7 +17,19 @@
 // ============================================================
 
 function calcularDescuento(subtotal) {
-  // Tu código aquí
+
+  let descuento;
+  if (subtotal >= 100000) {
+      descuento = subtotal * 10/100;
+    }else if(subtotal >= 50000){
+      descuento = subtotal * 5/100;
+    }else if( subtotal < 50000 ){
+      descuento = 0
+    }else{
+      console.log("Opción Inválida");
+    }
+    let resultado = Math.round(descuento)
+  return resultado;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función

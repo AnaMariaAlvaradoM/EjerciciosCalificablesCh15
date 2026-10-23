@@ -7,8 +7,7 @@
 // con un ciclo while, reste la venta diaria al stock día a día
 // y cuente los días hasta que el stock llegue a 0 o menos.
 //
-// Caso especial: si ventaDiaria es 0 o menor, el stock nunca
-// se acaba → retorna -1 (¡sin esto tendrías un ciclo infinito!)
+// Caso especial: si ventaDiaria es 0 o menor, el stock nunca se acaba → retorna -1 (¡sin esto tendrías un ciclo infinito!)
 //
 // Ejemplos:
 //   diasDeInventario(100, 30) → 4   (100 → 70 → 40 → 10 → -20)
@@ -17,7 +16,16 @@
 // ============================================================
 
 function diasDeInventario(stock, ventaDiaria) {
-  // Tu código aquí
+  if (ventaDiaria <= 0) {
+    return -1;
+  }
+  let contador = 0;
+  while (stock > 0) {
+    stock -= ventaDiaria;
+    contador ++;
+    
+  }
+  return contador;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función

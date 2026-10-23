@@ -17,8 +17,17 @@
 // ============================================================
 
 function esPrecioValido(valor) {
-  // Tu código aquí
+
+  if (typeof(valor) === "number"  && !Number.isNaN(valor) && 0 < valor ) {
+    valor = true
+    console.log(valor)
+  }else{
+    valor = false
+    console.log(valor)
+  }
+
+  return valor
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
-module.exports = { esPrecioValido };
+module.exports = { esPrecioValido }
