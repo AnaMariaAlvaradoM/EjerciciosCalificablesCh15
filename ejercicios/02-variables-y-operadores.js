@@ -15,7 +15,10 @@
 // ============================================================
 
 function calcularPrecioConIva(precio) {
-  // Tu código aquí
+  const Iva = 0.19
+  subtotal = precio * Iva
+  total = subtotal + precio
+  return Math.round(total) 
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función

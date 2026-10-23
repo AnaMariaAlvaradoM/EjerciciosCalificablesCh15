@@ -20,8 +20,29 @@
 // ============================================================
 
 function resumenInventario(productos) {
-  // Tu código aquí
+const totalProductos = productos.map(nombre=>nombre.nombre)
+const stock = productos.map(stock=>stock.stock)
+const valor = productos.map(precio=>precio.precio*precio.stock)
+let totalStock = 0
+let valorStock = 0
+for(const sumaStock of stock){
+  totalStock += sumaStock
+}
+for(const sumaInventario of valor){
+  valorStock += sumaInventario
+}
+const filtroProductos = productos.filter(n=>n.stock === 0)
+const agotados = filtroProductos.map(n=>n.nombre)
+
+  resumen= {
+  totalProductos: totalProductos.length,
+  unidadesTotales: totalStock,
+  valorInventario: valorStock,
+  agotados: agotados,
+}
+return resumen
 }
 
+console.log(resumenInventario)
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { resumenInventario };

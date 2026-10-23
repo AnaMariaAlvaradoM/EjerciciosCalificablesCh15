@@ -17,7 +17,16 @@
 // ============================================================
 
 function calcularDescuento(subtotal) {
-  // Tu código aquí
+  if (subtotal>=100000){
+    operacion10 = subtotal * 0.10
+    descuento10 = Math.round(operacion10)
+    return descuento10
+  }else if (subtotal>=50000){
+    operacion5 = subtotal * 0.05
+    descuento5= Math.round(operacion5)
+    return descuento5
+  }else
+    return 0
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
