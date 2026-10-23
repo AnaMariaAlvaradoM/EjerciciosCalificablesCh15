@@ -13,8 +13,19 @@
 // ============================================================
 
 function sumarVentas(ventas) {
-  // Tu código aquí
-}
+  
+  let suma = 0
+
+  for (const venta of ventas){
+
+      suma = suma + venta;
+      
+    }
+
+    return suma
+
+  }
+
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { sumarVentas };
