@@ -20,7 +20,22 @@
 // ============================================================
 
 function resumenInventario(productos) {
-  // Tu código aquí
+  const resumen = {
+    totalProductos: productos.length,
+    unidadesTotales: 0,
+    valorInventario: 0,
+    agotados: []
+  };
+  
+  for (let i = 0; i < productos.length; i++) {
+    const producto = productos[i];
+    resumen.unidadesTotales += producto.stock;
+    resumen.valorInventario += producto.precio * producto.stock;
+    if (producto.stock === 0) {
+      resumen.agotados.push(producto.nombre);
+    }
+  }
+  return resumen;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
