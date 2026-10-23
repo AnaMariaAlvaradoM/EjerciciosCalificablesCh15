@@ -16,8 +16,18 @@
 // ============================================================
 
 function crearProducto(nombre, precio, stock) {
-  // Tu código aquí
+  let producto = {
+    nombre: nombre,
+    precio: precio,
+    stock: stock,
+    disponible: stock > 0,
+  }
+  return producto;
 }
+//prueba de ejemplo
+console.log(crearProducto("Pandebono", 2500, 40)); 
+//→ { nombre: "Pandebono", precio: 2500, stock: 40, disponible: true }
+console.log(crearProducto("Pandebono", 2500, 0)); //false
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { crearProducto };
