@@ -18,6 +18,20 @@
 
 function esPrecioValido(valor) {
   // Tu código aquí
+  if (typeof valor !== 'number') {
+    return false;
+  }
+
+  // isNaN => no es un numero
+  if (Number.isNaN(valor)){
+    return false;
+  }
+
+  if (valor <= 0) {
+    return false;
+  }
+
+  return true
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
