@@ -16,7 +16,13 @@
 // ============================================================
 
 function crearProducto(nombre, precio, stock) {
-  // Tu código aquí
+  producto={nombre,precio,stock};
+  if(stock>0){
+    producto.disponible=true;
+  }else{
+    producto.disponible=false;
+  }
+  return producto;
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función

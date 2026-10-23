@@ -13,7 +13,12 @@
 // ============================================================
 
 function sumarVentas(ventas) {
-  // Tu código aquí
+  let suma=0;
+  for(i=0; i<=ventas.length-1;i++){
+    suma=suma+Number(ventas[i]);
+    console.log(suma);
+  }
+  return(suma);
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función

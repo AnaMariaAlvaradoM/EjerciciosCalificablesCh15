@@ -17,7 +17,16 @@
 // ============================================================
 
 function diasDeInventario(stock, ventaDiaria) {
-  // Tu código aquí
+  let contador=0;
+  while(stock>0){
+    if(ventaDiaria<=0){
+      return -1;
+    }else{
+      contador=contador+1;
+      stock=stock-ventaDiaria;
+    }
+  }
+  return(contador);
 }
 
 // No borres esta línea: es la puerta por donde el test usa tu función
